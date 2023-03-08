@@ -7,6 +7,7 @@ import useWindowDimensions from "./hooks/useWindowDimensions";
 import Bar from "./components/Bar";
 import Ball from "./components/Ball";
 import ControlPanel from "./components/ControlPanel";
+import Joystick from "./components/Joystick";
 
 import "./App.css";
 
@@ -14,6 +15,8 @@ import { Operations } from "./systems/System";
 
 const App = () => {
   const { width, height } = useWindowDimensions();
+
+  console.log(width, height);
   const [start, setStart] = React.useState(false);
   return (
     <div className="App">
@@ -54,7 +57,7 @@ const App = () => {
               width: 120,
               height: 10,
               borderRadius: 3,
-              left: width && width > 600 ? 600 / 2 - 60 : width || 600 / 2 - 60,
+              left: width && width / 2 - 60,
               top: height && height - 90,
               backgroundColor: "red",
               color: "white",
@@ -104,13 +107,37 @@ const App = () => {
               width: 20,
               height: 20,
               borderRadius: 50,
-              left: width && width > 600 ? 600 / 2 - 10 : width || 600 / 2 - 10,
+              left: width && width / 2 - 10,
               top: height && height / 2,
               backgroundColor: "red",
               zIndex: 100,
               cursor: "pointer",
             },
             component: <Ball></Ball>,
+          },
+          {
+            key: "Joystick",
+            name: "Joystick",
+            pause: false,
+            start: false,
+            left: false,
+            top: false,
+            speed: 2,
+            direction: null,
+            dimensions: {
+              width: width && width > 600 ? 600 : width,
+              height: height,
+            },
+            style: {
+              opacity: 1,
+              position: "absolute",
+              width: 20,
+              height: 20,
+              bottom: 40,
+              backgroundColor: "red",
+              zIndex: 100,
+            },
+            component: <Joystick></Joystick>,
           },
         ]}
         system={[Operations]}

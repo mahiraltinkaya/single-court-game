@@ -64,6 +64,20 @@ const Operations = (entities, { timer, start }, event) => {
     const bar = entities.find((x) => x.name === "Bar1");
     const ball = entities.find((x) => x.name === "Ball");
     const layout = entities.find((x) => x.name === "Layout");
+    const joystick = entities.find((x) => x.name === "Joystick");
+
+    if (
+      joystick.direction === "right" &&
+      bar.style["left"] < bar.dimensions.width - 120
+    ) {
+      bar.style["left"] += 35;
+    }
+
+    if (joystick.direction === "left" && bar.style["left"] > 0) {
+      bar.style["left"] -= 35;
+    }
+
+    joystick.direction = null;
 
     if (
       ball.style.left > bar.style.left &&
@@ -96,6 +110,10 @@ const Operations = (entities, { timer, start }, event) => {
 
       if (element.name === layout.name) {
         return layout;
+      }
+
+      if (element.name === joystick.name) {
+        return joystick;
       }
 
       return element;

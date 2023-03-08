@@ -5,11 +5,12 @@ const useWindowDimensions = () => {
     width: undefined,
     height: undefined,
   });
+
   useEffect(() => {
     function handleResize() {
       setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window.innerWidth || 600,
+        height: window.innerHeight || 800,
       });
     }
     window.addEventListener("resize", handleResize);

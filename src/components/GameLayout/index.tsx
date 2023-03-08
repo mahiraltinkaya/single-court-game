@@ -30,9 +30,7 @@ const GameLayout: React.FC<IProps> = ({ style, entity }) => {
       >
         Controls LeftArrow, RightArrow or A, D
       </div>
-      {entity.over && (
-        <div style={{ fontSize: 128, opacity: 5 }}>Game Over</div>
-      )}
+      {entity.over && <div style={{ fontSize: 72, opacity: 5 }}>Game Over</div>}
       <div style={{ fontSize: 128, opacity: 0.1 }}>{entity.point}</div>
     </div>
   );

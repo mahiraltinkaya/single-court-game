@@ -13,8 +13,8 @@ const ControlPanel: React.FC<IProps> = ({ onStart, onReset, start }) => {
     <div
       style={{
         position: "absolute",
-        right: 20,
-        bottom: 20,
+        left: 20,
+        top: 20,
         width: "50px",
         backgroundColor: "#d9d9d9",
         borderRadius: 10,
