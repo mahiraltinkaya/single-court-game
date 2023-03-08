@@ -56,7 +56,8 @@ const App = () => {
               width: 120,
               height: 10,
               borderRadius: 3,
-              left: width && width > 600 ? 600 / 2 - 60 : width / 2 - 60,
+              left:
+                width && width > 600 ? 600 / 2 - 60 : width && width / 2 - 60,
               top: height && height - 90,
               backgroundColor: "red",
               color: "white",
@@ -106,7 +107,8 @@ const App = () => {
               width: 20,
               height: 20,
               borderRadius: 50,
-              left: width && width > 600 ? 600 / 2 - 10 : width / 2 - 10,
+              left:
+                width && width > 600 ? 600 / 2 - 10 : width && width / 2 - 10,
               top: height && height / 2,
               backgroundColor: "red",
               zIndex: 100,
