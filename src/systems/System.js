@@ -68,7 +68,8 @@ const Operations = (entities, { timer, start }, event) => {
     if (
       ball.style.left > bar.style.left &&
       ball.style.left < bar.style.left + 120 &&
-      ball.style.top >= bar.style.top - 20
+      ball.style.top >= bar.style.top - 20 &&
+      layout.over === false
     ) {
       ball.top = true;
       ball.speed += 0.2;

@@ -20,6 +20,16 @@ const GameLayout: React.FC<IProps> = ({ style, entity }) => {
         justifyContent: "center",
       }}
     >
+      <div
+        style={{ fontSize: 32, opacity: 0.1, position: "absolute", top: 30 }}
+      >
+        Click to ball for start
+      </div>
+      <div
+        style={{ fontSize: 32, opacity: 0.1, position: "absolute", top: 70 }}
+      >
+        Controls LeftArrow, RightArrow or A, D
+      </div>
       {entity.over && (
         <div style={{ fontSize: 128, opacity: 5 }}>Game Over</div>
       )}
